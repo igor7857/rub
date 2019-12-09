@@ -1,41 +1,48 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Мой первый раз</title>
-    <link rel="stylesheet" href="css/name.css">
+	<meta charset="utf-8">
+ 	<title>Калькулятор лавки</title>
+ 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="contener">
-    <h1>Изучаем JS</h1>
-    <form name="formCl" oninput="btnClick(); return false;">
-        <label for="chm">цена товара в чм</label>
-        <input type="number" id="chm">
-        <br>
-        <label for="ed">единиц товара</label>
-        <input type="number" id="ed">
-        <br>
-    </form>
-    <br>
-    <p id="das" class="das">Результат: </p>
-</div>
+	<form name="calc" oninput="вычислить()"; onload="вычислить()">
+		<fieldset>
+			<legend>Калькулятор лавки</legend>
+				<label form="calc" for="ET_miracle_coin_price">Цена в чм:<br>
+				<input type="number"
+				id="ET_miracle_coin_price"
+				min="1"
+				value="73">
+				</label>
+				<br>
+				<br>
+				<label form="calc" for="ET_ed_tovara">Единиц товара:<br>
+				<input type="number"
+				id="ET_ed_tovara"
+				min="1"
+				value="1">
+				</label>
+				<br>
+				<br>
+				<div id="textResult"></div>
+		</fieldset>
+	</form>
+
 <script>
+	function вычислить(){
+		
+		let kurs = Number(0.12);
+		let miracle_coin_price = Number(calc.ET_miracle_coin_price.value);
+		let ed_tovara = Number(calc.ET_ed_tovara.value);
 
+		let result = (miracle_coin_price * ed_tovara * kurs);
 
-function btnClick() {
-	var chm, ed, kurs, result, form = document.formCl;
+		console.log(result);
 
-	chm = Number(form.chm.value);
-	ed = Number(form.ed.value);
-    kurs = Number(0.12);
-
-    result = ed * chm * kurs;
-
-	console.log(result);
-
-	document.getElementById("das").textContent = `${result}`;
-};
-
+		document.getElementById("textResult").innerHTML = result + ` руб`;
+	}
 </script>
+
 </body>
 </html>
