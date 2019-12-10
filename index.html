@@ -6,36 +6,43 @@
  	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<form name="calc" oninput="вычислить()"; onload="вычислить()">
-		<fieldset>
-			<legend>Калькулятор лавки</legend>
-				<label form="calc" for="ET_miracle_coin_price">Цена в чм:<br>
-				<input type="number"
-				id="ET_miracle_coin_price"
-				min="1"
-				value="73">
-				</label>
+	<div class="wrap">
+		<div class="bblock">
+			<form name="form1" oninput="вычислить()" onload="вычислить()">
+				<label for="ET_miracle_coin_price">Цена в чм</label>
 				<br>
+				<input type="Number" id="ET_miracle_coin_price" min="1" value="17">
+			</form>
+		</div>
+		<div class="bblock">
+			<form id="form2" oninput="вычислить()" onload="вычислить()">
+				<label for="ET_ed_tovara">Единиц товара</label>
 				<br>
-				<label form="calc" for="ET_ed_tovara">Единиц товара:<br>
-				<input type="number"
-				id="ET_ed_tovara"
-				min="1"
-				value="1">
-				</label>
+				<input type="Number" id="ET_ed_tovara" min="1" value="1">
+			</form>
+		</div>
+		<div class="bblock">
+			<form id="form3" oninput="вычислить()" onload="вычислить()">
+				<label for="ET_chm_na_akke">Чм на акке</label>
 				<br>
-				<br>
-				<div id="textResult"></div>
-		</fieldset>
-	</form>
+				<input type="Number" id="ET_chm_na_akke" min="0">
+			</form>
+		</div>
+  </div>
+  <div class="wrap1">
+  		<div id="chm" class="bblock1"></div>
+  		<div id="textResult" class="bblock1"> руб</div>
+  </div>
+
+
 
 <script>
-	calc.onload = вычислить();
+	form1.onload = вычислить();
 	function вычислить(){
 		let kurs = Number(0.12);
-		let miracle_coin_price = Number(calc.ET_miracle_coin_price.value);
-		let ed_tovara = Number(calc.ET_ed_tovara.value);
-
+		let miracle_coin_price = Number(form1.ET_miracle_coin_price.value);
+		let ed_tovara = Number(form2.ET_ed_tovara.value);
+		let chm_na_akke = Number(form3.ET_chm_na_akke.value);
 		let result = (miracle_coin_price * ed_tovara * kurs);
 		result = result.toFixed(2);
 
@@ -46,11 +53,13 @@
 			result = result / 10;
 			result = result.toFixed(2);
 		};
+		let resultChm = chm_na_akke - (miracle_coin_price * ed_tovara);
 
 		console.log(result);
-		
+		console.log(result);
 
 		document.getElementById("textResult").innerHTML = result + ` руб`;
+		document.getElementById("chm").innerHTML = resultChm;
 	}
 </script>
 

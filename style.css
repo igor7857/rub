@@ -1,3 +1,35 @@
 ﻿input {
 	text-align: center;
 }
+
+.bblock {
+	display: table-cell;
+	font-size: 1.5em;
+	width: 8em;
+	height: 3em;
+	background: gold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.wrap {
+	display: table;
+	background-color: darkgray;
+	margin: auto;
+}
+
+.bblock1 {
+	display: table-cell;
+	font-size: 1.2em;
+	width: 10em;
+	height: 0.5em;
+	background: gold;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.wrap1 {
+	display: table;
+	background-color: darkgray;
+	margin: auto;
+}
