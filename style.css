@@ -10,14 +10,14 @@
 	font-size: 32px;
 	width: 150px;
 	height: 120px;
-	background: gold;
+	
 	text-align: center;
 	vertical-align: middle;
 }
 
 .wrap {
 	display: table;
-	background-color: darkgray;
+	
 	margin: auto;
 }
 
@@ -26,14 +26,14 @@
 	font-size: 32px;
 	width: 200px;
 	height: 50px;
-	background: gold;
+	
 	text-align: center;
 	vertical-align: middle;
 }
 
 .wrap1 {
 	display: table;
-	background-color: darkgray;
+	
 	margin: auto;
 }
 .space {
