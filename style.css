@@ -1,12 +1,15 @@
 ﻿input {
 	text-align: center;
+	height: 32px;
+	font-size: 32px;
+	width: 200px;
 }
 
 .bblock {
 	display: table-cell;
-	font-size: 1.5em;
-	width: 8em;
-	height: 3em;
+	font-size: 32px;
+	width: 150px;
+	height: 120px;
 	background: gold;
 	text-align: center;
 	vertical-align: middle;
@@ -20,9 +23,9 @@
 
 .bblock1 {
 	display: table-cell;
-	font-size: 1.2em;
-	width: 10em;
-	height: 0.5em;
+	font-size: 32px;
+	width: 200px;
+	height: 50px;
 	background: gold;
 	text-align: center;
 	vertical-align: middle;
@@ -32,4 +35,8 @@
 	display: table;
 	background-color: darkgray;
 	margin: auto;
+}
+.space {
+	width: 50px;
+	height: 25px;
 }
