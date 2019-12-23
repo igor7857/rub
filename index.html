@@ -17,14 +17,12 @@
     	<p id="скр">цена товара в чм</p>
     	<input type="number" id="i_цена_товара_в_чм_1" min="0" value="674" oninput="tt()">
     	<div class="bt_i">
-    		<button onclick="op('i_цена_товара_в_чм_1', -15, 0)">-5</button>
-    		<button onclick="op('i_цена_товара_в_чм_1', -10, 0)">-5</button>
-            <button onclick="op('i_цена_товара_в_чм_1', -5, 0)">-5</button>
+    		<button onclick="op('i_цена_товара_в_чм_1', -15, 0)">-15</button>
+    		<button onclick="op('i_цена_товара_в_чм_1', -5, 0)">-5</button>
             <button onclick="op('i_цена_товара_в_чм_1', -1, 0)">-1</button>
             <button onclick="op('i_цена_товара_в_чм_1', +1, 0)">+1</button>
             <button onclick="op('i_цена_товара_в_чм_1', +5, 0)">+5</button>
-            <button onclick="op('i_цена_товара_в_чм_1', +10, 0)">+10</button>
-            <button onclick="op('i_цена_товара_в_чм_1', +15, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_1', +15, 0)">+15</button>
         </div>
     	<br id="br" style="display: none">
     	<p id="ыть">единиц товара</p>
@@ -44,14 +42,12 @@
     <div id="form_2" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_2" min="0" oninput="tt()">
     <div class="bt_i">
-    		<button onclick="op('i_цена_товара_в_чм_2', -15, 0)">-5</button>
-    		<button onclick="op('i_цена_товара_в_чм_2', -10, 0)">-5</button>
+    		<button onclick="op('i_цена_товара_в_чм_2', -15, 0)">-15</button>
             <button onclick="op('i_цена_товара_в_чм_2', -5, 0)">-5</button>
             <button onclick="op('i_цена_товара_в_чм_2', -1, 0)">-1</button>
             <button onclick="op('i_цена_товара_в_чм_2', +1, 0)">+1</button>
             <button onclick="op('i_цена_товара_в_чм_2', +5, 0)">+5</button>
-            <button onclick="op('i_цена_товара_в_чм_2', +10, 0)">+10</button>
-            <button onclick="op('i_цена_товара_в_чм_2', +15, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_2', +15, 0)">+15</button>
         </div>
         <br>
     <input placeholder="единиц товара" type="number" id="i_единиц_товара_2" min="0" oninput="tt()">
@@ -70,14 +66,12 @@
     <div id="form_3" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_3" min="0" oninput="tt()">
     <div class="bt_i">
-    		<button onclick="op('i_цена_товара_в_чм_3', -15, 0)">-5</button>
-    		<button onclick="op('i_цена_товара_в_чм_3', -10, 0)">-5</button>
+    		<button onclick="op('i_цена_товара_в_чм_3', -15, 0)">-15</button>
             <button onclick="op('i_цена_товара_в_чм_3', -5, 0)">-5</button>
             <button onclick="op('i_цена_товара_в_чм_3', -1, 0)">-1</button>
             <button onclick="op('i_цена_товара_в_чм_3', +1, 0)">+1</button>
             <button onclick="op('i_цена_товара_в_чм_3', +5, 0)">+5</button>
-            <button onclick="op('i_цена_товара_в_чм_3', +10, 0)">+10</button>
-            <button onclick="op('i_цена_товара_в_чм_3', +15, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_3', +15, 0)">+15</button>
         </div>
         <br>
     <input placeholder="единиц товара" type="number" id="i_единиц_товара_3" min="0" oninput="tt()">
@@ -128,12 +122,8 @@
             let ЦТ_3 = document.getElementById("i_цена_товара_в_чм_3").value;
             if (ЦТ_3.length == 0) {ЦТ_3 = 0};
             
-            let ЕТ_4 = document.getElementById("i_единиц_товара_4").value;
-            if (ЕТ_4.length == 0) {ЕТ_4 = 0};
-            let ЦТ_4 = document.getElementById("i_цена_товара_в_чм_4").value;
-            if (ЦТ_4.length == 0) {ЦТ_4 = 0};
             
-            let всего_чм = (ЕТ_1*ЦТ_1)+(ЕТ_2*ЦТ_2)+(ЕТ_3*ЦТ_3)+(ЕТ_4*ЦТ_4);
+            let всего_чм = (ЕТ_1*ЦТ_1)+(ЕТ_2*ЦТ_2)+(ЕТ_3*ЦТ_3);
             let rub = всего_чм * курс;
             rub = fix_rub(rub);
             let gold = всего_чм * 60;
