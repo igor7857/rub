@@ -16,6 +16,16 @@
     	<input type="number" id="i_чм_на_акке" min="1" oninput="tt()">
     	<p id="скр">цена товара в чм</p>
     	<input type="number" id="i_цена_товара_в_чм_1" min="0" value="674" oninput="tt()">
+    	<div class="bt_i">
+    		<button onclick="op('i_цена_товара_в_чм_1', -15, 0)">-5</button>
+    		<button onclick="op('i_цена_товара_в_чм_1', -10, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_1', -5, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_1', -1, 0)">-1</button>
+            <button onclick="op('i_цена_товара_в_чм_1', +1, 0)">+1</button>
+            <button onclick="op('i_цена_товара_в_чм_1', +5, 0)">+5</button>
+            <button onclick="op('i_цена_товара_в_чм_1', +10, 0)">+10</button>
+            <button onclick="op('i_цена_товара_в_чм_1', +15, 0)">-5</button>
+        </div>
     	<br id="br" style="display: none">
     	<p id="ыть">единиц товара</p>
     	<input type="number" id="i_единиц_товара_1" min="0" value="1" oninput="tt()">
@@ -33,6 +43,16 @@
     
     <div id="form_2" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_2" min="0" oninput="tt()">
+    <div class="bt_i">
+    		<button onclick="op('i_цена_товара_в_чм_2', -15, 0)">-5</button>
+    		<button onclick="op('i_цена_товара_в_чм_2', -10, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_2', -5, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_2', -1, 0)">-1</button>
+            <button onclick="op('i_цена_товара_в_чм_2', +1, 0)">+1</button>
+            <button onclick="op('i_цена_товара_в_чм_2', +5, 0)">+5</button>
+            <button onclick="op('i_цена_товара_в_чм_2', +10, 0)">+10</button>
+            <button onclick="op('i_цена_товара_в_чм_2', +15, 0)">-5</button>
+        </div>
         <br>
     <input placeholder="единиц товара" type="number" id="i_единиц_товара_2" min="0" oninput="tt()">
         <div class="bt_i">
@@ -49,6 +69,16 @@
     
     <div id="form_3" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_3" min="0" oninput="tt()">
+    <div class="bt_i">
+    		<button onclick="op('i_цена_товара_в_чм_3', -15, 0)">-5</button>
+    		<button onclick="op('i_цена_товара_в_чм_3', -10, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_3', -5, 0)">-5</button>
+            <button onclick="op('i_цена_товара_в_чм_3', -1, 0)">-1</button>
+            <button onclick="op('i_цена_товара_в_чм_3', +1, 0)">+1</button>
+            <button onclick="op('i_цена_товара_в_чм_3', +5, 0)">+5</button>
+            <button onclick="op('i_цена_товара_в_чм_3', +10, 0)">+10</button>
+            <button onclick="op('i_цена_товара_в_чм_3', +15, 0)">-5</button>
+        </div>
         <br>
     <input placeholder="единиц товара" type="number" id="i_единиц_товара_3" min="0" oninput="tt()">
         <div class="bt_i">
@@ -61,18 +91,6 @@
     
     <div>
         <button id="шаг3" onclick="шаг3()" style="display: none;">+</button>
-    </div>
-    
-    <div id="form_4" class="forma" style="display: none">
-    <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_4" min="0" oninput="tt()">
-        <br>
-    <input placeholder="единиц товара" type="number" id="i_единиц_товара_4" min="0" oninput="tt()">
-        <div class="bt_i">
-            <button onclick="op('i_единиц_товара_4', -5, 0)">-5</button>
-            <button onclick="op('i_единиц_товара_4', -1, 0)">-1</button>
-            <button onclick="op('i_единиц_товара_4', +1, 0)">+1</button>
-            <button onclick="op('i_единиц_товара_4', +5, 0)">+5</button>
-        </div>
     </div>
     
     <div class="forma" style="text-align: right;">
@@ -124,7 +142,7 @@
             goldfix = goldfix * 100;
 
             document.getElementById("vRub").innerHTML = rub + " руб";
-            document.getElementById("vВсегоЧМ").innerHTML = всего_чм + " чм" + " = " + gold + " голд = " + goldfix + " голд";
+            document.getElementById("vВсегоЧМ").innerHTML = всего_чм + " чм" + " = " + goldfix + " голд";
             let Rg = 3500 / 30750 * всего_чм;
             Rg = fix_Rg(Rg)
             let rG = (rub - Rg)
@@ -178,13 +196,8 @@
             document.getElementById('шаг1').style.display = 'none';
         }
         function шаг2(){
-            document.getElementById('form_3').style.display = 'block';
             document.getElementById('шаг3').style.display = 'block';
             document.getElementById('шаг2').style.display = 'none';
-        }
-        function шаг3(){
-            document.getElementById('form_4').style.display = 'block';
-            document.getElementById('шаг3').style.display = 'none';
         }
     </script>
 </body>
