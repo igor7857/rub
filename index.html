@@ -10,11 +10,10 @@
  	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h2>Калькулятор лавки</h2>
     <div id="form_1" class="forma">
-    	<p id="сь">чм на акке</p>
+    	<p id="сь" style="display: none;">чм на акке</p>
     	<input type="number" id="i_чм_на_акке" min="1" oninput="tt()">
-    	<p id="скр">цена товара в чм</p>
+    	<p id="скр" style="display: none;">цена товара в чм</p>
     	<input type="number" id="i_цена_товара_в_чм_1" min="0" value="674" oninput="tt()">
     	<div class="bt_i">
     		<button onclick="op('i_цена_товара_в_чм_1', -15, 0)">-15</button>
@@ -25,7 +24,7 @@
             <button onclick="op('i_цена_товара_в_чм_1', +15, 0)">+15</button>
         </div>
     	<br id="br" style="display: none">
-    	<p id="ыть">единиц товара</p>
+    	<p id="ыть" style="display: none;">единиц товара</p>
     	<input type="number" id="i_единиц_товара_1" min="0" value="1" oninput="tt()">
     	<div class="bt_i">
             <button onclick="op('i_единиц_товара_1', -5, 0)">-5</button>
