@@ -1,38 +1,38 @@
-﻿input {
-	text-align: center;
-	height: 32px;
-	font-size: 32px;
-	width: 200px;
+﻿*{
+	padding: 0; margin: 0;
 }
-
-.bblock {
-	display: table-cell;
-	font-size: 32px;
-	width: 150px;
-	height: 120px;
-	text-align: center;
-	vertical-align: middle;
+body {
+	margin: 0 auto;
+    max-width: 450px;
+	min-width: 300px;
 }
-
-.wrap {
-	display: table;	
-	margin: auto;
+h2{
+    margin-top: 20px;
+    text-align: center;
 }
-
-.bblock1 {
-	display: table-cell;
-	font-size: 32px;
-	width: 200px;
-	height: 50px;
-	text-align: center;
-	vertical-align: middle;
+.forma{
+    background: #ecedee;
+	border: 2px solid #999999;
+	padding: 10px;
+	margin: 10px;
 }
-
-.wrap1 {
-	display: table;
-	margin: auto;
+input{
+    width: 100%;
+    font-size: 18px;
 }
-.space {
-	width: 50px;
-	height: 25px;
+button {
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+}
+.bt_i{
+    text-align: center;
+    margin-top: 5px;
+}
+p{
+    font-size: 20px;
+}
+.ch{
+    height: 20px;
+    width: 20px;
 }
