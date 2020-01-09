@@ -1,32 +1,32 @@
 <!DOCTYPE HTML>
 <html lang="ru">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="viewport" content="height=device-height, initial-scale=1.0">
-	<meta content="text/css">
- 	<title>Мой кальк</title>
- 	<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0">
+    <meta content="text/css">
+    <title>Мой кальк</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="form_1" class="forma">
-    	<p id="сь" style="display: none;">чм на акке</p>
-    	<input type="number" id="i_чм_на_акке" min="1" oninput="tt()">
-    	<p id="скр" style="display: none;">цена товара в чм</p>
-    	<input type="number" id="i_цена_товара_в_чм_1" min="0" value="65" oninput="tt()">
-    	<div class="bt_i">
-    		<button onclick="op('i_цена_товара_в_чм_1', -15, 0)">-15</button>
-    		<button onclick="op('i_цена_товара_в_чм_1', -5, 0)">-5</button>
+        <p id="сь" style="display: none;">чм на акке</p>
+        <input type="number" id="i_чм_на_акке" min="1" oninput="tt()">
+        <p id="скр" style="display: none;">цена товара в чм</p>
+        <input type="number" id="i_цена_товара_в_чм_1" min="0" value="65" oninput="tt()">
+        <div class="bt_i">
+            <button onclick="op('i_цена_товара_в_чм_1', -15, 0)">-15</button>
+            <button onclick="op('i_цена_товара_в_чм_1', -5, 0)">-5</button>
             <button onclick="op('i_цена_товара_в_чм_1', -1, 0)">-1</button>
             <button onclick="op('i_цена_товара_в_чм_1', +1, 0)">+1</button>
             <button onclick="op('i_цена_товара_в_чм_1', +5, 0)">+5</button>
             <button onclick="op('i_цена_товара_в_чм_1', +15, 0)">+15</button>
         </div>
-    	<br id="br" style="display: none">
-    	<p id="ыть" style="display: none;">единиц товара</p>
-    	<input type="number" id="i_единиц_товара_1" min="0" value="1" oninput="tt()">
-    	<div class="bt_i">
+        <br id="br" style="display: none">
+        <p id="ыть" style="display: none;">единиц товара</p>
+        <input type="number" id="i_единиц_товара_1" min="0" value="1" oninput="tt()">
+        <div class="bt_i">
             <button onclick="op('i_единиц_товара_1', -5, 0)">-5</button>
             <button onclick="op('i_единиц_товара_1', -1, 0)">-1</button>
             <button onclick="op('i_единиц_товара_1', +1, 0)">+1</button>
@@ -41,7 +41,7 @@
     <div id="form_2" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_2" min="0" oninput="tt()">
     <div class="bt_i">
-    		<button onclick="op('i_цена_товара_в_чм_2', -15, 0)">-15</button>
+            <button onclick="op('i_цена_товара_в_чм_2', -15, 0)">-15</button>
             <button onclick="op('i_цена_товара_в_чм_2', -5, 0)">-5</button>
             <button onclick="op('i_цена_товара_в_чм_2', -1, 0)">-1</button>
             <button onclick="op('i_цена_товара_в_чм_2', +1, 0)">+1</button>
@@ -65,7 +65,7 @@
     <div id="form_3" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_3" min="0" oninput="tt()">
     <div class="bt_i">
-    		<button onclick="op('i_цена_товара_в_чм_3', -15, 0)">-15</button>
+            <button onclick="op('i_цена_товара_в_чм_3', -15, 0)">-15</button>
             <button onclick="op('i_цена_товара_в_чм_3', -5, 0)">-5</button>
             <button onclick="op('i_цена_товара_в_чм_3', -1, 0)">-1</button>
             <button onclick="op('i_цена_товара_в_чм_3', +1, 0)">+1</button>
@@ -88,14 +88,16 @@
         <br>
         <p id="vВсегоЧМ">чм</p>
         <p id="vОстЧМ"></p>
+        <input type="text" id="i_1" style="width: 80%"> <button onclick="CopyInput('i_1')">copy</button>
+        <input type="text" id="i_2" style="width: 80%"> <button>copy</button>
     </div>
     
     <script>
-    	document.getElementById("i_чм_на_акке").value = "";
-    	document.getElementById("i_единиц_товара_2").value = "";
-    	document.getElementById("i_цена_товара_в_чм_2").value = "";
-    	document.getElementById("i_единиц_товара_3").value = "";
-    	document.getElementById("i_цена_товара_в_чм_3").value = "";
+        document.getElementById("i_чм_на_акке").value = "";
+        document.getElementById("i_единиц_товара_2").value = "";
+        document.getElementById("i_цена_товара_в_чм_2").value = "";
+        document.getElementById("i_единиц_товара_3").value = "";
+        document.getElementById("i_цена_товара_в_чм_3").value = "";
         tt();
         function tt(){
             let курс = 0.12;
@@ -134,6 +136,8 @@
             let чм_на_акке = document.getElementById("i_чм_на_акке").value;
             let остЧМ = чм_на_акке - всего_чм;
             document.getElementById("vОстЧМ").innerHTML = "останется " + остЧМ + " чм";
+
+            document.getElementById("i_1").value = "можешь переводить " + rub + " руб"
         }
         
         function op (i, n, temp){
@@ -168,9 +172,14 @@
             a = a * 5 * 100;
             return a;
         }
+        function CopyInput(a){
+            let copyText = document.getElementById(a);
+            copyText.select();
+            document.execCommand("copy")
+        }
         
         function шаг1(){
-        	document.getElementById('сь').style.display = 'none';
+            document.getElementById('сь').style.display = 'none';
             document.getElementById('скр').style.display = 'none';
             document.getElementById('ыть').style.display = 'none';
             document.getElementById('br').style.display = 'block';
