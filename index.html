@@ -11,6 +11,7 @@
 </head>
 <body>
     <div id="form_1" class="forma">
+        <p style="display: inline"><input class="ch" type="checkbox" id="i_chb" oninput="tt()" style="margin-top: 5px;">право неожиданности</p>
         <p id="сь" style="display: none;">чм на акке</p>
         <input type="number" id="i_чм_на_акке" min="1" oninput="tt()">
         <p id="скр" style="display: none;">цена товара в чм</p>
@@ -83,13 +84,12 @@
     </div>
     
     <div class="forma" style="text-align: right;">
-        <p id="vRub">руб</p>
-        <p id="vRaG">руб+голд</p>
+        <p style="display: inline;" id="vRub">руб</p><button style="margin-left: 10px;" onclick="copy1('i_1', 'vRub')">copy</button><br>
+        <p style="display: inline;" id="vRaG">руб+голд</p><button style="margin-left: 10px;" onclick="copy1('i_1', 'vRaG')">copy</button><br>
         <br>
-        <p id="vВсегоЧМ">чм</p>
+        <p style="display: inline;" id="vВсегоЧМ">чм</p><button style="margin-left: 10px;" onclick="copy2('i_1', 'vВсегоЧМ')">copy</button>
         <p id="vОстЧМ"></p>
-        <input type="text" id="i_1" style="width: 80%"> <button onclick="CopyInput('i_1')">copy</button>
-        <input type="text" id="i_2" style="width: 80%"> <button>copy</button>
+        <input type="text" id="i_1" style="width: 100%;">
     </div>
     
     <script>
@@ -137,7 +137,13 @@
             let остЧМ = чм_на_акке - всего_чм;
             document.getElementById("vОстЧМ").innerHTML = "останется " + остЧМ + " чм";
 
-            document.getElementById("i_1").value = "можешь переводить " + rub + " руб"
+            let razn = rub - Rg
+
+            let ch = document.getElementById("i_chb");
+            if (ch.checked) {
+                rub = rub - razn;
+                document.getElementById("vRub").innerHTML = rub + " руб";
+            }
         }
         
         function op (i, n, temp){
@@ -160,10 +166,13 @@
         }
         
         function fix_Rg(a){
-            a = a * 10;
-            a = Math.ceil(a);
-            a = a / 10;
-            a = a.toFixed(2);
+            if (a < 50) {
+                a = a * 10;
+                a = Math.ceil(a);
+                a = a / 10;
+                a = a.toFixed(2);
+            }
+            if (a >= 50) {a = Math.ceil(a);}
             return a;
         }
         
@@ -172,8 +181,17 @@
             a = a * 5 * 100;
             return a;
         }
-        function CopyInput(a){
-            let copyText = document.getElementById(a);
+        function copy1(aaa, bbb){
+            let temp = document.getElementById(bbb).innerHTML;
+            document.getElementById(aaa).value = "можешь переводить " + temp;
+            let copyText = document.getElementById(aaa);
+            copyText.select();
+            document.execCommand("copy")
+        }
+        function copy2(aaa, bbb){
+            let temp = document.getElementById(bbb).innerHTML;
+            document.getElementById(aaa).value = "" + temp;
+            let copyText = document.getElementById(aaa);
             copyText.select();
             document.execCommand("copy")
         }
