@@ -16,7 +16,7 @@
         <p id="сь" style="display: none;">чм на акке</p>
         <input type="number" id="i_чм_на_акке" min="1" oninput="tt()">
         <p id="скр" style="display: none;">цена товара в чм</p>
-        <input type="number" id="i_цена_товара_в_чм_1" min="0" value="48" oninput="tt()">
+        <input type="number" id="i_цена_товара_в_чм_1" min="0" value="129" oninput="tt()">
         <div class="bt_i">
             <button onclick="op('i_цена_товара_в_чм_1', -15, 0)">-15</button>
             <button onclick="op('i_цена_товара_в_чм_1', -5, 0)">-5</button>
@@ -35,11 +35,11 @@
             <button onclick="op('i_единиц_товара_1', +5, 0)">+5</button>
         </div>
     </div>
-    
+
     <div>
         <button id="шаг1" onclick="шаг1()" style="display: block">+</button>
     </div>
-    
+
     <div id="form_2" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_2" min="0" oninput="tt()">
     <div class="bt_i">
@@ -59,11 +59,11 @@
             <button onclick="op('i_единиц_товара_2', +5, 0)">+5</button>
         </div>
     </div>
-    
+
     <div>
         <button id="шаг2" onclick="шаг2()" style="display: none">+</button>
     </div>
-    
+
     <div id="form_3" class="forma" style="display: none">
     <input placeholder="цена товара в чм" type="number" id="i_цена_товара_в_чм_3" min="0" oninput="tt()">
     <div class="bt_i">
@@ -83,7 +83,7 @@
             <button onclick="op('i_единиц_товара_3', +5, 0)">+5</button>
         </div>
     </div>
-    
+
     <div class="forma" style="text-align: right;">
         <p style="display: inline;" id="vRub">руб</p><button style="margin-left: 10px;" onclick="copy1('i_1', 'vRub')">copy</button><br>
         <p style="display: inline;" id="vRaG">руб+голд</p><button style="margin-left: 10px;" onclick="copy1('i_1', 'vRaG')">copy</button><br>
@@ -92,7 +92,7 @@
         <p id="vОстЧМ"></p>
         <input type="text" id="i_1" style="width: 100%;">
     </div>
-    
+
     <script>
         document.getElementById("i_чм_на_акке").value = "";
         document.getElementById("i_единиц_товара_2").value = "";
@@ -107,18 +107,18 @@
             if (ЕТ_1.length == 0) {ЕТ_1 = 0};
             let ЦТ_1 = document.getElementById("i_цена_товара_в_чм_1").value;
             if (ЦТ_1.length == 0) {ЦТ_1 = 0};
-            
+
             let ЕТ_2 = document.getElementById("i_единиц_товара_2").value;
             if (ЕТ_2.length == 0) {ЕТ_2 = 0};
             let ЦТ_2 = document.getElementById("i_цена_товара_в_чм_2").value;
             if (ЦТ_2.length == 0) {ЦТ_2 = 0};
-            
+
             let ЕТ_3 = document.getElementById("i_единиц_товара_3").value;
             if (ЕТ_3.length == 0) {ЕТ_3 = 0};
             let ЦТ_3 = document.getElementById("i_цена_товара_в_чм_3").value;
             if (ЦТ_3.length == 0) {ЦТ_3 = 0};
-            
-            
+
+
             let всего_чм = (ЕТ_1*ЦТ_1)+(ЕТ_2*ЦТ_2)+(ЕТ_3*ЦТ_3);
             let rub = всего_чм * курс;
             rub = fix_rub(rub);
@@ -146,14 +146,14 @@
                 document.getElementById("vRub").innerHTML = rub + " руб";
             }
         }
-        
+
         function op (i, n, temp){
             temp = Number(document.getElementById(i).value);
             document.getElementById(i).value = n+temp;
             if (document.getElementById(i).value < 0) {document.getElementById(i).value = 0};
             tt()
         }
-        
+
         function fix_rub(a){
             a = a.toFixed(2);
             if (a >= 50) {a = Math.floor(a);}
@@ -165,7 +165,7 @@
             }
             return a;
         }
-        
+
         function fix_Rg(a){
             if (a < 50) {
                 a = a * 10;
@@ -176,7 +176,7 @@
             if (a >= 50) {a = Math.ceil(a);}
             return a;
         }
-        
+
         function fix_rG(a){
             a = a.toFixed(2);
             a = a * 5 * 100;
@@ -196,7 +196,7 @@
             copyText.select();
             document.execCommand("copy")
         }
-        
+
         function шаг1(){
             document.getElementById('сь').style.display = 'none';
             document.getElementById('скр').style.display = 'none';
