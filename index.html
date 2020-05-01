@@ -133,7 +133,7 @@
             Rg = fix_Rg(Rg)
             let rG = (rub - Rg)
             rG = fix_rG(rG);
-            document.getElementById("vRaG").innerHTML = Rg + ` руб + ` + rG + ` голд`;
+            document.getElementById("vRaG").innerHTML = Rg + ` руб`;
             let чм_на_акке = document.getElementById("i_чм_на_акке").value;
             let остЧМ = чм_на_акке - всего_чм;
             document.getElementById("vОстЧМ").innerHTML = "останется " + остЧМ + " чм";
@@ -184,7 +184,7 @@
         }
         function copy1(aaa, bbb){
             let temp = document.getElementById(bbb).innerHTML;
-            document.getElementById(aaa).value = "можешь переводить " + temp;
+            document.getElementById(aaa).value = "можешь переводить " + temp + " киви и сбер +79024798578";
             let copyText = document.getElementById(aaa);
             copyText.select();
             document.execCommand("copy")
